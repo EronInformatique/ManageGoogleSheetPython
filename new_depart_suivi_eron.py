@@ -287,7 +287,7 @@ if __name__ == "__main__":
     sh = gc.open_by_key('13VqSH8KjAzB3-mroVhtUJjXgO2Gs31UtpqdehiLMyRs')
 
     template_use = ["01","02"] # 1er element Jour , second Mois (quel feuille du google sheet sert de template)
-    start_wk_sheet = ["01","04"]  # 1er element Jour , second Mois (à partir de quelle feuille on duplique)
+    start_wk_sheet = ["01","05"]  # 1er element Jour , second Mois (à partir de quelle feuille on duplique)
     
     # 1) Dupliquer les sheets pour les nouveaux départ de session
     new_worksheet_created=duplicate_wk_sheet_from_exist(template_use, start_wk_sheet,dic_sheet_structure_suivi,All=False)
@@ -298,8 +298,8 @@ if __name__ == "__main__":
     # 3) Nommer les noms de plages protégées qui ont été duppliquées
     set_named_range(new_worksheet_created,start_wk_sheet)
 
-    # 4) Update Page accueil
-    dep_row_num=48
+    # 4) Update Page accueil (Penser à verifier le numéro de ligne pour faire correspondre à l'ajout de formule)
+    dep_row_num=52
     stats_formations_row= [7,37,67,95,111,121]
     stats_formations_col= ["r","s"]
     update_wk_sheet_accueil(new_worksheet_created,start_wk_sheet,dep_row_num,stats_formations_row,stats_formations_col)
